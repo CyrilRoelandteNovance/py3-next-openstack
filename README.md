@@ -16,7 +16,7 @@ One can test an OpenStack project using the next version of Python by running
 the following command:
 
 ~~~console
-PROJECT=/path/to/git/directory make tox
+$ PROJECT=/path/to/git/directory make tox
 ~~~
 
 This mounts the git repository into the container and runs `tox -repy3XX`.
@@ -27,7 +27,7 @@ one can build the wheel by themselves, copy it to `/path/to/custom/wheels` and
 instruct pip to use it:
 
 ~~~console
-PROJECT=/path/to/git/directory WHEELS=/path/to/custom/wheels make tox
+$ PROJECT=/path/to/git/directory WHEELS=/path/to/custom/wheels make tox
 ~~~
 
 ## Building a custom wheel
@@ -35,7 +35,7 @@ PROJECT=/path/to/git/directory WHEELS=/path/to/custom/wheels make tox
 The following command will build a wheel for the given project:
 
 ~~~console
-PROJECT=/path/to/git/directory make wheel
+$ PROJECT=/path/to/git/directory make wheel
 ~~~
 
 The wheel will be available in `/path/to/git/directory/dist`.
@@ -45,5 +45,5 @@ The wheel will be available in `/path/to/git/directory/dist`.
 One may open a shell in the container by running:
 
 ~~~console
-PROJECT=/path/to/git/directory WHEELS=/path/to/custom/wheels make debug
+$ PROJECT=/path/to/git/directory WHEELS=/path/to/custom/wheels make debug
 ~~~
