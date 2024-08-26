@@ -1,4 +1,5 @@
-FROM python:3.12.0rc2
+ARG VERSION
+FROM python:${VERSION}
 
 WORKDIR /usr/src/app
 
@@ -9,4 +10,4 @@ RUN apt update -y
 RUN apt install -y libldap-dev librdkafka-dev libsasl2-dev qemu-utils
 RUN pip install --no-cache-dir tox build
 
-CMD tox -repy312
+CMD tox -repy3

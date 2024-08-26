@@ -1,4 +1,4 @@
-VERSION=3.12.0rc2-1
+VERSION?=3.13.0rc1
 IMAGE=py3-next-openstack:${VERSION}
 
 WORKDIR=/usr/src/app
@@ -6,7 +6,9 @@ WHEELDIR=/usr/src/wheels
 TOX_CONSTRAINTS_FILE=https://opendev.org/openstack/requirements/raw/branch/master/global-requirements.txt
 
 build-py3-next-openstack:
-	podman build -t ${IMAGE} -f py3-next-openstack.Containerfile
+	podman build \
+		--build-arg VERSION=${VERSION} \
+		-t ${IMAGE} -f py3-next-openstack.Containerfile
 
 # Check whether PROJECT is defined
 check-project:

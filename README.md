@@ -10,6 +10,14 @@ The following command will build the py3-next-openstack container image:
 $ make build-py3-next-openstack
 ~~~
 
+One may also specify a specific version of Python to use in the container image,
+using a valid tag from [the Docker Hub](https://hub.docker.com/_/python):
+
+~~~console
+$ VERSION=3.13.0rc1 make build-py3-next-openstack
+~~~
+
+
 ## Testing a project inside a container
 
 One can test an OpenStack project using the next version of Python by running
